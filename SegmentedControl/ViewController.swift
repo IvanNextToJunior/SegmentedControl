@@ -46,11 +46,17 @@ class ViewController: UIViewController {
         guard nameTextField.text?.isEmpty == false else {return}
         
         if let _ = Double(nameTextField.text!) {
-            print("Name format is wrong")
+           
+            let alert = UIAlertController(title: "Wrong format", message: "Please enter your name", preferredStyle: .alert)
+            let action = UIAlertAction(title: "OK", style: .default, handler: nil)
+            alert.addAction(action)
+            present(alert, animated: true, completion: nil)
         }
         
         else {
             label.text = nameTextField.text
+            nameTextField.text = nil
+           
         }
     }
     
@@ -76,4 +82,5 @@ class ViewController: UIViewController {
 
 
 }
+
 
