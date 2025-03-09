@@ -12,6 +12,7 @@ class ViewController: UIViewController {
     @IBOutlet weak var segmentedControl: UISegmentedControl!
     @IBOutlet weak var label: UILabel!
     @IBOutlet weak var slider: UISlider!
+    @IBOutlet weak var nameTextField: UITextField!
     
     @IBAction func chooseSegmentedControl(_ sender: UISegmentedControl) {
         
@@ -38,6 +39,19 @@ class ViewController: UIViewController {
     
     @IBAction func changeSliderValue(_ sender: UISlider) {
         label.text = String(sender.value)
+    }
+    
+    @IBAction func finishNameEnteringButton(_ sender: UIButton) {
+       
+        guard nameTextField.text?.isEmpty == false else {return}
+        
+        if let _ = Double(nameTextField.text!) {
+            print("Name format is wrong")
+        }
+        
+        else {
+            label.text = nameTextField.text
+        }
     }
     
     override func viewDidLoad() {
