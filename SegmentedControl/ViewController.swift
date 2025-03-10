@@ -56,6 +56,7 @@ class ViewController: UIViewController {
         else {
             label.text = nameTextField.text
             nameTextField.text = nil
+        
            
         }
     }
@@ -78,9 +79,15 @@ class ViewController: UIViewController {
         slider.maximumTrackTintColor = .red
         slider.thumbTintColor = .blue
         
+        nameTextField.delegate = self
     }
 
 
 }
 
 
+extension ViewController: UITextFieldDelegate {
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+    }
+}
