@@ -99,7 +99,6 @@
                     <connections>
                         <outlet property="label" destination="KLd-Li-PmB" id="QAe-ZZ-u0c"/>
                         <outlet property="nameTextField" destination="nnJ-VV-IrT" id="Bkm-mg-yaB"/>
-                        <outlet property="scrollView" destination="6al-NC-51U" id="SIB-9U-xJ5"/>
                         <outlet property="segmentedControl" destination="pqM-Ps-Pzv" id="Nqe-ax-pdS"/>
                         <outlet property="slider" destination="MEc-MX-jsH" id="JVL-Hv-RIg"/>
                     </connections>
