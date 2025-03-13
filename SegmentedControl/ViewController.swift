@@ -12,6 +12,7 @@ class ViewController: UIViewController {
     @IBOutlet weak var segmentedControl: UISegmentedControl!
     @IBOutlet weak var label: UILabel!
     @IBOutlet weak var slider: UISlider!
+    @IBOutlet weak var scrollView: UIScrollView!
     @IBOutlet weak var nameTextField: UITextField!
     
     @IBAction func chooseSegmentedControl(_ sender: UISegmentedControl) {

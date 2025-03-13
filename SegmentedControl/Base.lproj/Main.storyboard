@@ -13,76 +13,93 @@
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="SegmentedControl" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="1000"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="pqM-Ps-Pzv">
-                                <rect key="frame" x="20" y="158" width="328" height="32"/>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6al-NC-51U">
+                                <rect key="frame" x="-10" y="138" width="444" height="862"/>
+                                <subviews>
+                                    <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="pqM-Ps-Pzv">
+                                        <rect key="frame" x="30" y="20" width="328" height="32"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="31" id="SuH-Ie-cH5"/>
+                                        </constraints>
+                                        <segments>
+                                            <segment title="First"/>
+                                            <segment title="Second"/>
+                                        </segments>
+                                        <connections>
+                                            <action selector="chooseSegmentedControl:" destination="BYZ-38-t0r" eventType="valueChanged" id="fuz-Nq-Kv3"/>
+                                        </connections>
+                                    </segmentedControl>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="clip" baselineAdjustment="none" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KLd-Li-PmB">
+                                        <rect key="frame" x="30" y="133" width="384" height="21"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="MEc-MX-jsH">
+                                        <rect key="frame" x="30" y="187" width="376" height="30"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="29" id="ssA-iM-Czk"/>
+                                        </constraints>
+                                        <connections>
+                                            <action selector="changeSliderValue:" destination="BYZ-38-t0r" eventType="valueChanged" id="GSa-7O-fhx"/>
+                                        </connections>
+                                    </slider>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" usesAttributedText="YES" borderStyle="roundedRect" placeholder="Enter your name" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="nnJ-VV-IrT">
+                                        <rect key="frame" x="8" y="262" width="415" height="34"/>
+                                        <attributedString key="attributedText"/>
+                                        <textInputTraits key="textInputTraits" enablesReturnKeyAutomatically="YES"/>
+                                    </textField>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="clip" translatesAutoresizingMaskIntoConstraints="NO" id="h91-Bb-lYZ">
+                                        <rect key="frame" x="134" y="375" width="112" height="31"/>
+                                        <color key="backgroundColor" red="0.0" green="0.63890068794516353" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <color key="tintColor" red="1" green="0.98057441749999996" blue="0.80742237800000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="plain" title="Done"/>
+                                        <connections>
+                                            <action selector="finishNameEnteringButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="UbP-fc-WlB"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="31" id="SuH-Ie-cH5"/>
+                                    <constraint firstItem="nnJ-VV-IrT" firstAttribute="leading" secondItem="6al-NC-51U" secondAttribute="leadingMargin" id="4Ik-BV-IG1"/>
+                                    <constraint firstItem="nnJ-VV-IrT" firstAttribute="top" secondItem="MEc-MX-jsH" secondAttribute="bottom" constant="46" id="663-WC-eSX"/>
+                                    <constraint firstAttribute="trailing" secondItem="nnJ-VV-IrT" secondAttribute="trailing" constant="21" id="BB4-KU-l6d"/>
+                                    <constraint firstItem="h91-Bb-lYZ" firstAttribute="leading" secondItem="qyN-KI-OU7" secondAttribute="leading" constant="134" id="G32-n8-caP"/>
+                                    <constraint firstItem="qyN-KI-OU7" firstAttribute="trailing" secondItem="nnJ-VV-IrT" secondAttribute="trailing" constant="21" id="JyB-Im-nHR"/>
+                                    <constraint firstItem="h91-Bb-lYZ" firstAttribute="top" secondItem="nnJ-VV-IrT" secondAttribute="bottom" constant="79" id="MUO-0S-qJY"/>
+                                    <constraint firstItem="MEc-MX-jsH" firstAttribute="top" secondItem="KLd-Li-PmB" secondAttribute="bottom" constant="33" id="V9a-0B-tTe"/>
+                                    <constraint firstItem="qyN-KI-OU7" firstAttribute="trailing" secondItem="h91-Bb-lYZ" secondAttribute="trailing" constant="198" id="W70-fi-qpe"/>
+                                    <constraint firstItem="MEc-MX-jsH" firstAttribute="leading" secondItem="qyN-KI-OU7" secondAttribute="leading" constant="32" id="XD8-62-6um"/>
+                                    <constraint firstItem="qyN-KI-OU7" firstAttribute="trailing" secondItem="MEc-MX-jsH" secondAttribute="trailing" constant="40" id="YxL-CR-Q2F"/>
+                                    <constraint firstItem="qyN-KI-OU7" firstAttribute="bottom" secondItem="h91-Bb-lYZ" secondAttribute="bottom" constant="456" id="bLX-Le-4ui"/>
+                                    <constraint firstAttribute="bottom" secondItem="h91-Bb-lYZ" secondAttribute="bottom" constant="456" id="bg5-C3-ucQ"/>
+                                    <constraint firstItem="KLd-Li-PmB" firstAttribute="top" secondItem="pqM-Ps-Pzv" secondAttribute="bottom" constant="82" id="exO-In-iFd"/>
+                                    <constraint firstItem="pqM-Ps-Pzv" firstAttribute="top" secondItem="qyN-KI-OU7" secondAttribute="top" constant="20" id="kYq-nD-toF"/>
+                                    <constraint firstItem="pqM-Ps-Pzv" firstAttribute="leading" secondItem="qyN-KI-OU7" secondAttribute="leading" constant="30" id="ld1-74-Mog"/>
+                                    <constraint firstItem="pqM-Ps-Pzv" firstAttribute="leading" secondItem="KLd-Li-PmB" secondAttribute="leading" id="q5u-Yf-1K6"/>
+                                    <constraint firstItem="KLd-Li-PmB" firstAttribute="centerX" secondItem="6al-NC-51U" secondAttribute="centerX" id="qZ7-nN-1Kq"/>
+                                    <constraint firstItem="qyN-KI-OU7" firstAttribute="trailing" secondItem="pqM-Ps-Pzv" secondAttribute="trailing" constant="86" id="tA5-hN-tCi"/>
                                 </constraints>
-                                <segments>
-                                    <segment title="First"/>
-                                    <segment title="Second"/>
-                                </segments>
-                                <connections>
-                                    <action selector="chooseSegmentedControl:" destination="BYZ-38-t0r" eventType="valueChanged" id="fuz-Nq-Kv3"/>
-                                </connections>
-                            </segmentedControl>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="clip" baselineAdjustment="none" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KLd-Li-PmB">
-                                <rect key="frame" x="20" y="271" width="383" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="MEc-MX-jsH">
-                                <rect key="frame" x="20" y="325" width="376" height="30"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="29" id="ssA-iM-Czk"/>
-                                </constraints>
-                                <connections>
-                                    <action selector="changeSliderValue:" destination="BYZ-38-t0r" eventType="valueChanged" id="GSa-7O-fhx"/>
-                                </connections>
-                            </slider>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" usesAttributedText="YES" borderStyle="roundedRect" placeholder="Enter your name" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="nnJ-VV-IrT">
-                                <rect key="frame" x="10" y="400" width="404" height="34"/>
-                                <attributedString key="attributedText"/>
-                                <textInputTraits key="textInputTraits" enablesReturnKeyAutomatically="YES"/>
-                            </textField>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="clip" translatesAutoresizingMaskIntoConstraints="NO" id="h91-Bb-lYZ">
-                                <rect key="frame" x="124" y="513" width="112" height="31"/>
-                                <color key="backgroundColor" red="0.0" green="0.63890068794516353" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <color key="tintColor" red="1" green="0.98057441749999996" blue="0.80742237800000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain" title="Done"/>
-                                <connections>
-                                    <action selector="finishNameEnteringButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="UbP-fc-WlB"/>
-                                </connections>
-                            </button>
+                                <viewLayoutGuide key="contentLayoutGuide" id="naY-N0-5AT"/>
+                                <viewLayoutGuide key="frameLayoutGuide" id="qyN-KI-OU7"/>
+                            </scrollView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemGreenColor"/>
                         <constraints>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="MEc-MX-jsH" secondAttribute="trailing" constant="20" id="2N6-4T-7mS"/>
-                            <constraint firstItem="pqM-Ps-Pzv" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="7hi-YG-qAY"/>
-                            <constraint firstItem="h91-Bb-lYZ" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="124" id="IAY-oi-FFS"/>
-                            <constraint firstItem="nnJ-VV-IrT" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="10" id="KTG-fq-im2"/>
-                            <constraint firstItem="nnJ-VV-IrT" firstAttribute="top" secondItem="MEc-MX-jsH" secondAttribute="bottom" constant="46" id="QgQ-im-wfv"/>
-                            <constraint firstItem="MEc-MX-jsH" firstAttribute="top" secondItem="KLd-Li-PmB" secondAttribute="bottom" constant="33" id="UKK-sU-0vh"/>
-                            <constraint firstItem="KLd-Li-PmB" firstAttribute="top" secondItem="pqM-Ps-Pzv" secondAttribute="bottom" constant="82" id="Ucu-4q-9CL"/>
-                            <constraint firstItem="MEc-MX-jsH" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="22" id="Uui-4m-1FL"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="h91-Bb-lYZ" secondAttribute="trailing" constant="178" id="VTZ-Uo-Xz5"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="pqM-Ps-Pzv" secondAttribute="trailing" constant="66" id="aEh-1U-Lf4"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="KLd-Li-PmB" secondAttribute="trailing" constant="11" id="klm-zv-Tsw"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="nnJ-VV-IrT" secondAttribute="trailing" id="ovg-w0-ejK"/>
-                            <constraint firstItem="h91-Bb-lYZ" firstAttribute="top" secondItem="nnJ-VV-IrT" secondAttribute="bottom" constant="79" id="vwd-Vj-qAg"/>
-                            <constraint firstItem="KLd-Li-PmB" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="yMV-cZ-UIs"/>
-                            <constraint firstItem="pqM-Ps-Pzv" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="114" id="zNW-r4-PvS"/>
+                            <constraint firstItem="6al-NC-51U" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="94" id="0yA-jh-m8l"/>
+                            <constraint firstItem="6al-NC-51U" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="-30" id="7Dl-5N-jae"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="6al-NC-51U" secondAttribute="trailing" constant="-40" id="hBz-4Q-vbj"/>
                         </constraints>
                     </view>
+                    <size key="freeformSize" width="414" height="1000"/>
                     <connections>
                         <outlet property="label" destination="KLd-Li-PmB" id="QAe-ZZ-u0c"/>
                         <outlet property="nameTextField" destination="nnJ-VV-IrT" id="Bkm-mg-yaB"/>
+                        <outlet property="scrollView" destination="6al-NC-51U" id="SIB-9U-xJ5"/>
                         <outlet property="segmentedControl" destination="pqM-Ps-Pzv" id="Nqe-ax-pdS"/>
                         <outlet property="slider" destination="MEc-MX-jsH" id="JVL-Hv-RIg"/>
                     </connections>
