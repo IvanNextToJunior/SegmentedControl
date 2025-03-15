@@ -69,6 +69,9 @@
                                             <constraint firstAttribute="height" constant="162" id="W8t-J5-iIe"/>
                                         </constraints>
                                         <locale key="locale" localeIdentifier="ru"/>
+                                        <connections>
+                                            <action selector="changeDateTouchUpInside:" destination="BYZ-38-t0r" eventType="valueChanged" id="CA9-ge-gr8"/>
+                                        </connections>
                                     </datePicker>
                                 </subviews>
                                 <constraints>
