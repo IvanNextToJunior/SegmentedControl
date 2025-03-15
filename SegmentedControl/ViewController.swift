@@ -85,6 +85,11 @@ class ViewController: UIViewController {
 
     @IBAction private func changeDateTouchUpInside(_ sender: UIDatePicker) {
     
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateStyle = .medium
+        let date = dateFormatter.string(from: sender.date)
+        
+        label.text = date
     }
     
 }
