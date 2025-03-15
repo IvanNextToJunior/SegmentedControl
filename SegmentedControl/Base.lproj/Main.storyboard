@@ -63,7 +63,7 @@
                                         </connections>
                                     </button>
                                     <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="date" translatesAutoresizingMaskIntoConstraints="NO" id="gdX-2l-B6Z">
-                                        <rect key="frame" x="8" y="465" width="391" height="162"/>
+                                        <rect key="frame" x="8" y="465" width="390.5" height="162"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="444" id="Nyg-9A-bhO"/>
                                             <constraint firstAttribute="height" constant="162" id="W8t-J5-iIe"/>
