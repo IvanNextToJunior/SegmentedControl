@@ -9,13 +9,13 @@ import UIKit
 
 class ViewController: UIViewController {
 
-    @IBOutlet weak var segmentedControl: UISegmentedControl!
-    @IBOutlet weak var label: UILabel!
-    @IBOutlet weak var slider: UISlider!
-    @IBOutlet weak var nameTextField: UITextField!
-    @IBOutlet weak var datePicker: UIDatePicker!
+    @IBOutlet weak private var segmentedControl: UISegmentedControl!
+    @IBOutlet weak private var label: UILabel!
+    @IBOutlet weak private var slider: UISlider!
+    @IBOutlet weak private var nameTextField: UITextField!
+    @IBOutlet weak private var datePicker: UIDatePicker!
     
-    @IBAction func chooseSegmentedControl(_ sender: UISegmentedControl) {
+    @IBAction private func chooseSegmentedControl(_ sender: UISegmentedControl) {
         
         label.isHidden = false
         
@@ -38,11 +38,11 @@ class ViewController: UIViewController {
         }
     }
     
-    @IBAction func changeSliderValue(_ sender: UISlider) {
+    @IBAction private func changeSliderValue(_ sender: UISlider) {
         label.text = String(sender.value)
     }
     
-    @IBAction func finishNameEnteringButton(_ sender: UIButton) {
+    @IBAction private func finishNameEnteringButton(_ sender: UIButton) {
        
         guard nameTextField.text?.isEmpty == false else {return}
         
@@ -83,7 +83,7 @@ class ViewController: UIViewController {
         nameTextField.delegate = self
     }
 
-    @IBAction func changeDateTouchUpInside(_ sender: UIDatePicker) {
+    @IBAction private func changeDateTouchUpInside(_ sender: UIDatePicker) {
     
     }
     
