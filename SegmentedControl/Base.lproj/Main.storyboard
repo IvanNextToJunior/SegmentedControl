@@ -17,10 +17,10 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6al-NC-51U">
-                                <rect key="frame" x="-10" y="138" width="390.5" height="862"/>
+                                <rect key="frame" x="-10" y="138" width="444" height="862"/>
                                 <subviews>
                                     <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="pqM-Ps-Pzv">
-                                        <rect key="frame" x="38" y="20" width="274.5" height="32"/>
+                                        <rect key="frame" x="30" y="20" width="328" height="32"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="31" id="SuH-Ie-cH5"/>
                                         </constraints>
@@ -33,13 +33,13 @@
                                         </connections>
                                     </segmentedControl>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="clip" baselineAdjustment="none" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KLd-Li-PmB">
-                                        <rect key="frame" x="38" y="133" width="314.5" height="21"/>
+                                        <rect key="frame" x="30" y="133" width="384" height="21"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="MEc-MX-jsH">
-                                        <rect key="frame" x="38" y="187" width="322.5" height="30"/>
+                                        <rect key="frame" x="30" y="187" width="376" height="30"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="29" id="ssA-iM-Czk"/>
                                         </constraints>
@@ -48,12 +48,12 @@
                                         </connections>
                                     </slider>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" usesAttributedText="YES" borderStyle="roundedRect" placeholder="Enter your name" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="nnJ-VV-IrT">
-                                        <rect key="frame" x="8" y="262" width="369.5" height="34"/>
+                                        <rect key="frame" x="8" y="262" width="415" height="34"/>
                                         <attributedString key="attributedText"/>
                                         <textInputTraits key="textInputTraits" enablesReturnKeyAutomatically="YES"/>
                                     </textField>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="clip" translatesAutoresizingMaskIntoConstraints="NO" id="h91-Bb-lYZ">
-                                        <rect key="frame" x="142" y="375" width="58.5" height="31"/>
+                                        <rect key="frame" x="134" y="375" width="112" height="31"/>
                                         <color key="backgroundColor" red="0.0" green="0.63890068794516353" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <color key="tintColor" red="1" green="0.98057441749999996" blue="0.80742237800000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <state key="normal" title="Button"/>
@@ -63,7 +63,7 @@
                                         </connections>
                                     </button>
                                     <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="date" translatesAutoresizingMaskIntoConstraints="NO" id="gdX-2l-B6Z">
-                                        <rect key="frame" x="8" y="465" width="390.5" height="162"/>
+                                        <rect key="frame" x="8" y="465" width="436" height="162"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="444" id="Nyg-9A-bhO"/>
                                             <constraint firstAttribute="height" constant="162" id="W8t-J5-iIe"/>
@@ -96,7 +96,6 @@
                                     <constraint firstItem="KLd-Li-PmB" firstAttribute="centerX" secondItem="6al-NC-51U" secondAttribute="centerX" id="qZ7-nN-1Kq"/>
                                     <constraint firstItem="qyN-KI-OU7" firstAttribute="trailing" secondItem="pqM-Ps-Pzv" secondAttribute="trailing" constant="86" id="tA5-hN-tCi"/>
                                     <constraint firstAttribute="height" constant="862" id="xJy-pE-hfQ"/>
-                                    <constraint firstItem="gdX-2l-B6Z" firstAttribute="centerX" secondItem="6al-NC-51U" secondAttribute="centerX" id="ym6-1Y-LaP"/>
                                 </constraints>
                                 <viewLayoutGuide key="contentLayoutGuide" id="naY-N0-5AT"/>
                                 <viewLayoutGuide key="frameLayoutGuide" id="qyN-KI-OU7"/>
