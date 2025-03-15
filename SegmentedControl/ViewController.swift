@@ -13,6 +13,7 @@ class ViewController: UIViewController {
     @IBOutlet weak var label: UILabel!
     @IBOutlet weak var slider: UISlider!
     @IBOutlet weak var nameTextField: UITextField!
+    @IBOutlet weak var datePicker: UIDatePicker!
     
     @IBAction func chooseSegmentedControl(_ sender: UISegmentedControl) {
         
