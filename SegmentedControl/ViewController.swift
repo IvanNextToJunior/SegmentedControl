@@ -102,6 +102,14 @@ class ViewController: UIViewController {
         nameTextField.isHidden = !nameTextField.isHidden
         datePicker.isHidden = !datePicker.isHidden
         finishNameEnteringButton.isHidden = !finishNameEnteringButton.isHidden
+        
+        if sender.isOn {
+            switchTitleLabel.text = "Отобразить все элементы"
+        }
+        
+        else {
+            switchTitleLabel.text = "Скрыть все элементы"
+        }
     }
 }
 
