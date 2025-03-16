@@ -14,6 +14,9 @@ class ViewController: UIViewController {
     @IBOutlet weak private var slider: UISlider!
     @IBOutlet weak private var nameTextField: UITextField!
     @IBOutlet weak private var datePicker: UIDatePicker!
+    @IBOutlet weak private var switchTitleLabel: UILabel!
+    @IBOutlet weak var finishNameEnteringButton: UIButton!
+    
     
     @IBAction private func chooseSegmentedControl(_ sender: UISegmentedControl) {
         
@@ -42,7 +45,7 @@ class ViewController: UIViewController {
         label.text = String(sender.value)
     }
     
-    @IBAction private func finishNameEnteringButton(_ sender: UIButton) {
+    @IBAction private func finishNameEnteringButtonTouchUpInside(_ sender: UIButton) {
        
         guard nameTextField.text?.isEmpty == false else {return}
         
@@ -92,6 +95,14 @@ class ViewController: UIViewController {
         label.text = date
     }
     
+    @IBAction func switchAction(_ sender: UISwitch) {
+        segmentedControl.isHidden = !segmentedControl.isHidden
+        label.isHidden = !label.isHidden
+        slider.isHidden = !slider.isHidden
+        nameTextField.isHidden = !nameTextField.isHidden
+        datePicker.isHidden = !datePicker.isHidden
+        finishNameEnteringButton.isHidden = !finishNameEnteringButton.isHidden
+    }
 }
 
 
