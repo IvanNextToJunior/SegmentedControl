@@ -18,7 +18,8 @@ class ViewController: UIViewController {
     @IBOutlet weak private var finishNameEnteringButton: UIButton!
     
     var uiElements = ["UISegmentedControl", "UILabel", "UISlider", "UITextField", "UIButton", "UIDatePicker"]
-   
+    var selectedElement: String?
+    
     @IBAction private func chooseSegmentedControl(_ sender: UISegmentedControl) {
         
         label.isHidden = false
@@ -61,32 +62,9 @@ class ViewController: UIViewController {
         else {
             label.text = nameTextField.text
             nameTextField.text = nil
-        
-           
         }
     }
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        
-        slider.value = 1
-        
-        label.text = String(slider.value)
-        label.font = label.font.withSize(35)
-        label.textAlignment = .center
-        label.numberOfLines = 2
-        
-        segmentedControl.insertSegment(withTitle: "Third", at: 2, animated: true)
-        
-        slider.minimumValue = 1
-        slider.maximumValue = 100
-        slider.minimumTrackTintColor = .yellow
-        slider.maximumTrackTintColor = .red
-        slider.thumbTintColor = .blue
-        
-        nameTextField.delegate = self
-    }
-
     @IBAction private func changeDateTouchUpInside(_ sender: UIDatePicker) {
     
         let dateFormatter = DateFormatter()
@@ -112,8 +90,113 @@ class ViewController: UIViewController {
             switchTitleLabel.text = "Скрыть все элементы"
         }
     }
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        slider.value = 1
+        
+        label.text = String(slider.value)
+        label.font = label.font.withSize(35)
+        label.textAlignment = .center
+        label.numberOfLines = 2
+        
+        segmentedControl.insertSegment(withTitle: "Third", at: 2, animated: true)
+        
+        slider.minimumValue = 1
+        slider.maximumValue = 100
+        slider.minimumTrackTintColor = .yellow
+        slider.maximumTrackTintColor = .red
+        slider.thumbTintColor = .blue
+        
+        nameTextField.delegate = self
+    
+        chooseUIElement()
+        createToolBar()
+    }
+
+    func hideAllElements() {
+        segmentedControl.isHidden = true
+        label.isHidden = true
+        slider.isHidden = true
+        finishNameEnteringButton.isHidden = true
+        datePicker.isHidden = true
+    }
+    
+    func chooseUIElement() {
+        let elementPicker = UIPickerView()
+      
+        elementPicker.delegate = self
+        elementPicker.dataSource = self
+        
+        nameTextField.inputView = elementPicker
+    }
+    
+    func createToolBar() {
+        let toolbar = UIToolbar()
+        toolbar.sizeToFit()
+        
+        let doneButton = UIBarButtonItem(title: "Done", style: .plain, target: self, action: #selector(dismissKeyboard))
+        
+        toolbar.setItems([doneButton], animated: true)
+        toolbar.isUserInteractionEnabled = true
+        
+        nameTextField.inputAccessoryView = toolbar
+    }
+    
+    @objc func dismissKeyboard() {
+        view.endEditing(true)
+    }
 }
 
+extension ViewController: UIPickerViewDelegate, UIPickerViewDataSource {
+    func numberOfComponents(in pickerView: UIPickerView) -> Int {
+        return 1
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
+        uiElements.count
+    }
+   
+    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
+        uiElements[row]
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
+        selectedElement = uiElements[row]
+        nameTextField.text = selectedElement
+        
+        switch row {
+        
+        case 0:
+            hideAllElements()
+            segmentedControl.isHidden = false
+       
+        case 1:
+            hideAllElements()
+            label.isHidden = false
+            
+        case 2:
+            hideAllElements()
+            slider.isHidden = false
+            
+        case 3:
+            hideAllElements()
+          
+        case 4:
+            hideAllElements()
+            finishNameEnteringButton.isHidden = false
+            
+        case 5:
+            hideAllElements()
+            datePicker.isHidden = false
+       
+        default:
+            hideAllElements()
+        }
+    }
+    
+}
 
 extension ViewController: UITextFieldDelegate {
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
