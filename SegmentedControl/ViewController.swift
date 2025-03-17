@@ -17,7 +17,8 @@ class ViewController: UIViewController {
     @IBOutlet weak private var switchTitleLabel: UILabel!
     @IBOutlet weak private var finishNameEnteringButton: UIButton!
     
-    
+    var uiElements = ["UISegmentedControl", "UILabel", "UISlider", "UITextField", "UIButton", "UIDatePicker"]
+   
     @IBAction private func chooseSegmentedControl(_ sender: UISegmentedControl) {
         
         label.isHidden = false
