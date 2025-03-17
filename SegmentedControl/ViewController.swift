@@ -15,7 +15,7 @@ class ViewController: UIViewController {
     @IBOutlet weak private var nameTextField: UITextField!
     @IBOutlet weak private var datePicker: UIDatePicker!
     @IBOutlet weak private var switchTitleLabel: UILabel!
-    @IBOutlet weak var finishNameEnteringButton: UIButton!
+    @IBOutlet weak private var finishNameEnteringButton: UIButton!
     
     
     @IBAction private func chooseSegmentedControl(_ sender: UISegmentedControl) {
@@ -95,7 +95,7 @@ class ViewController: UIViewController {
         label.text = date
     }
     
-    @IBAction func switchAction(_ sender: UISwitch) {
+    @IBAction private func switchAction(_ sender: UISwitch) {
         segmentedControl.isHidden = !segmentedControl.isHidden
         label.isHidden = !label.isHidden
         slider.isHidden = !slider.isHidden
